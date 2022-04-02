@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane id="AnchorPane" prefHeight="400" prefWidth="520" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.FXMLDocumentController">
+    <center>
+        <LineChart    fx:id="сhart"    prefHeight="380.0"    prefWidth="410.0" title="Графік">
+            <xAxis>
+                <NumberAxis label="X" lowerBound="-10" upperBound="10" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Y" lowerBound="-10" upperBound="10" />
+            </yAxis>
+        </LineChart>
+    </center>
+    <left>
+        <VBox>
+            <Button text="Побудувати" onAction="#draw"/>
+            <Label text="" fx:id="info"/>
+        </VBox>
+    </left>
+    <bottom>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>         
+            <Label text="x_min=" GridPane.columnIndex="0" GridPane.rowIndex="0"/> 
+            <TextField text="-10" GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="xMin"/>
+            <Label text="x_max=" GridPane.columnIndex="2" GridPane.rowIndex="0"/> 
+            <TextField text="10" GridPane.columnIndex="3" GridPane.rowIndex="0" fx:id="xMax"/>
+            <Label text="крок:" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+            <TextField text="0.05" GridPane.columnIndex="5" GridPane.rowIndex="0" fx:id="dx"/>
+        </GridPane>
+    </bottom>
+</BorderPane>
